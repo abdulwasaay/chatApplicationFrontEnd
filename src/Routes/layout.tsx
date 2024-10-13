@@ -7,7 +7,9 @@ import NotFound from "../Components/Errors/NotFound/Notfound"
 import ProtectedRoutes from "./ProtectedRoutes"
 import getCurrentRoutePath from "../Utils/CurrentPathFinder"
 import { useEffect } from "react"
+import { authCookie } from "../constants/cookieNames"
 import { useDispatch, useSelector } from "react-redux"
+import GetCookieValue from "../Utils/getCookie"
 import { setAuth } from "../Redux/Slices/AuthSlice"
 
 const RoutesLayout = () => {
@@ -15,7 +17,7 @@ const RoutesLayout = () => {
     const { isAuth } = useSelector((state: any) => state.authSlice);
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        const token = GetCookieValue(authCookie);
         if (token) {
             dispatch(setAuth(true))
         } else {

@@ -5,7 +5,7 @@ import forgotSlice from "./Slices/ApiSLices/ForgotSlice";
 import OTPSlice from "./Slices/ApiSLices/OTPSlice";
 import VerifyOTPSlice from "./Slices/ApiSLices/VerifyOTPSlice";
 import ResetSlice from "./Slices/ApiSLices/ResetSlice";
-import authSlice from "./Slices/AuthSlice";
+import authSlice from "./Slices/ApiSLices/AuthSlice";
 
 const rootReducer = combineReducers({
     signupSlice,
