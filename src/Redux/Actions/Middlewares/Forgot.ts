@@ -18,7 +18,7 @@ const onForgotPass = createAsyncThunk(
             const data = await response.json()
             if (!response.ok){
                 const errMessage = ApiErrors(response,data)
-                onFail(data,errMessage)
+                onFail(errMessage)
             }else{
                 onForgotSuccess(data)
             }

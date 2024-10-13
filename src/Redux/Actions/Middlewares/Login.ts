@@ -23,7 +23,7 @@ const onLogin = createAsyncThunk(
                     return onRedirection(data?.email)
                 }
                 const errMessage = ApiErrors(response,data)
-                onFail(data,errMessage)
+                onFail(errMessage)
             }else{
                 onLoginSuccess(data)
             }

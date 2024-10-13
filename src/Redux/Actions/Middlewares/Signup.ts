@@ -21,7 +21,7 @@ const onRegister = createAsyncThunk(
                 onSignupSuccess(data)
             } else {
                 const errMessage = ApiErrors(response,data)
-                onFail(data,errMessage)
+                onFail(errMessage)
             }
         } catch (err: any) {
             if (err.message === 'Failed to fetch') {

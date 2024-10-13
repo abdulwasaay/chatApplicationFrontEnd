@@ -21,7 +21,7 @@ const onResetPassword = createAsyncThunk(
             }
             else {
                 const errMessage = ApiErrors(response,data)
-                onResetFail(data,errMessage)
+                onResetFail(errMessage)
             }
         } catch (err: any) {
             if (err.message === 'Failed to fetch') {
