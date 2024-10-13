@@ -1,4 +1,3 @@
-// const apiBaseUrl = "https://backend-chatly.vercel.app";
-const apiBaseUrl = "http://localhost:3000";
+const apiBaseUrl = "https://backend-chatly.vercel.app";
 
 export default apiBaseUrl
