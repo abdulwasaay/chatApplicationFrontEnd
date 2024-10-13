@@ -10,17 +10,17 @@ import { useDispatch, useSelector } from "react-redux"
 import onRegister from "../../Redux/Actions/Middlewares/Signup"
 import { toast } from "react-toastify"
 import onLogin from "../../Redux/Actions/Middlewares/Login"
-import { onLoginReducer } from "../../Redux/Slices/ApiSLices/LoginSlice"
 import onForgotPass from "../../Redux/Actions/Middlewares/Forgot"
 import OtpVerify from "../../Components/auth/OtpVerify"
 import onOtpSent from "../../Redux/Actions/Middlewares/SentOTP"
 import onVerifyOtp from "../../Redux/Actions/Middlewares/VerifyOtp"
 import onResetPassword from "../../Redux/Actions/Middlewares/ResetPass"
+import { onLoginReducer } from "../../Redux/Slices/AuthSlice"
 
 const Auth = () => {
     const dispatch: any = useDispatch();
     const navigate = useNavigate();
-    const { isAuth } = useSelector((state: any) => state.loginSlice);
+    const { isAuth } = useSelector((state: any) => state.authSlice);
 
     const signupHandler = (formData: any) => dispatch(onRegister({ formData, onSignupSuccess, onFail }));
     const loginHandler = (formData: any) => dispatch(onLogin({ formData, onRedirection, onLoginSuccess, onFail }));

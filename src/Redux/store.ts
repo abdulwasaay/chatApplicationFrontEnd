@@ -7,7 +7,15 @@ import { thunk } from "redux-thunk";
 
 const persistConfig = {
     key: 'root',
-    storage
+    storage,
+    blacklist : [
+        "signupSlice",
+        "loginSlice",
+        "forgotSlice",
+        "OTPSlice",
+        "VerifyOTPSlice",
+        "ResetSlice",
+    ]
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

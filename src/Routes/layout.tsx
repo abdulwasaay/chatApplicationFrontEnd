@@ -9,12 +9,12 @@ import getCurrentRoutePath from "../Utils/CurrentPathFinder"
 import { useEffect } from "react"
 import { authCookie } from "../constants/cookieNames"
 import { useDispatch, useSelector } from "react-redux"
-import { setAuth } from "../Redux/Slices/ApiSLices/LoginSlice"
 import GetCookieValue from "../Utils/getCookie"
+import { setAuth } from "../Redux/Slices/AuthSlice"
 
 const RoutesLayout = () => {
     const dispatch = useDispatch();
-    const { isAuth } = useSelector((state: any) => state.loginSlice);
+    const { isAuth } = useSelector((state: any) => state.authSlice);
 
     useEffect(() => {
         const token = GetCookieValue(authCookie);

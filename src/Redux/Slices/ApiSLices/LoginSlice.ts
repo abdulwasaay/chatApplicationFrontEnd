@@ -1,23 +1,14 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import onLogin from "../../Actions/Middlewares/Login";
 
 const loginState:any = {
     isLoading: false,
-    isAuth : false,
-    user:{}
 }
 
 const loginSlice = createSlice({
     name: "login",
     initialState: loginState,
     reducers: {
-        onLoginReducer : (state , action:PayloadAction<any>) => {
-            state.user = action.payload
-            state.isAuth = true
-        },
-        setAuth : (state , action:PayloadAction<any>) => {
-            state.isAuth = action.payload
-        }
     },
     extraReducers(builder) {
         builder
@@ -33,7 +24,5 @@ const loginSlice = createSlice({
 
     },
 })
-
-export const {onLoginReducer , setAuth} = loginSlice.actions
 
 export default loginSlice.reducer
