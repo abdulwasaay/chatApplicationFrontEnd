@@ -38,7 +38,7 @@ const ResetPass:React.FC<resetProps> = ({handleResetPassword}) => {
     }
 
     const resetPassSchema: any = Yup.object().shape({
-        password: Yup.string().required("Password is required").test('', function (value, context) {
+        password: Yup.string().required("Password is required").test('', function (value) {
           const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&,])[A-Za-z\d@$!%*?&,]{8,}$/;
           if (value) {
             if (!strongPasswordRegex.test(value)) {
@@ -47,7 +47,7 @@ const ResetPass:React.FC<resetProps> = ({handleResetPassword}) => {
             return true
           }
         }),
-        confirmPassword: Yup.string().required("password is required").test('', function (value: any, context: any) {
+        confirmPassword: Yup.string().required("password is required").test('', function (value: any) {
           const password: any = this.from
           if (value) {
             if (password[0].value.password !== value) {

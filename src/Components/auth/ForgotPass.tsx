@@ -27,7 +27,7 @@ const ForgotPass:React.FC<forgotPassProps> = ({handleForgotPassword}) => {
 
         },
         validationSchema: Yup.object().shape({
-            email: Yup.string().required('Email is required').test('', function (value, context) {
+            email: Yup.string().required('Email is required').test('', function (value) {
                 const strongEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
                 if (value) {
                     if (!strongEmailRegex.test(value)) {

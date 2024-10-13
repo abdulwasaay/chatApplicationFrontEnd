@@ -33,7 +33,7 @@ const Auth = () => {
         navigate(routeLinks.otpPage, { state: res?.email })
     }
 
-    const onFail = (res: any, message: string) => {
+    const onFail = (message: string) => {
         toast.error(message)
 
     }
@@ -47,20 +47,20 @@ const Auth = () => {
         navigate(routeLinks.otpPage, { state: email })
     }
 
-    const onForgotSuccess = (data: any) => {
+    const onForgotSuccess = () => {
         toast.success("Email Sent Successfully")
     }
 
-    const onverifyOtpSuccess = (data: any) => {
+    const onverifyOtpSuccess = () => {
         toast.success("OTP Verified");
         navigate(routeLinks.registerPage)
     }
-    const onResetSuccess = (data: any) => {
+    const onResetSuccess = () => {
         toast.success("Password Changed");
         navigate(routeLinks.registerPage);
     }
 
-    const onResetFail = (res: any, message: string) => {
+    const onResetFail = ( message: string) => {
         navigate(routeLinks.registerPage);
         toast.error(message)
     }

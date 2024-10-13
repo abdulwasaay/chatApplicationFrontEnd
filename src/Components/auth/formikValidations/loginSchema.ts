@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 const LoginSchema: any = Yup.object().shape({
-  email: Yup.string().required('Email is required').test('', function (value, context) {
+  email: Yup.string().required('Email is required').test('', function (value) {
     const strongEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (value) {
       if (!strongEmailRegex.test(value)) {
@@ -10,7 +10,7 @@ const LoginSchema: any = Yup.object().shape({
       return true
     }
   }),
-  password: Yup.string().required("Password is required").test('', function (value, context) {
+  password: Yup.string().required("Password is required").test('', function (value) {
     const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#,])[A-Za-z\d@$!%*?&#,]{8,}$/;
     if (value) {
       if (!strongPasswordRegex.test(value)) {
