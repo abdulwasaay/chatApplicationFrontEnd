@@ -18,6 +18,7 @@ const RoutesLayout = () => {
 
     useEffect(() => {
         const token = GetCookieValue(authCookie);
+        
         if (token) {
             dispatch(setAuth(true))
         } else {
