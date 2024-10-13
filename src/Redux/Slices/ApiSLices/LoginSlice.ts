@@ -24,7 +24,7 @@ const loginSlice = createSlice({
             .addCase(onLogin.pending, (state) => {
                 state.isLoading = true
             })
-            .addCase(onLogin.fulfilled, (state , action:PayloadAction<any>) => {
+            .addCase(onLogin.fulfilled, (state) => {
                 state.isLoading = false
             })
             .addCase(onLogin.rejected, (state) => {

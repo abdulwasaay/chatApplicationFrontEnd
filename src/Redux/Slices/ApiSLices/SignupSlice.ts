@@ -9,9 +9,6 @@ const signupSlice = createSlice({
     name: "signup",
     initialState: signupState,
     reducers: {
-        addUsers:(state,action)=>{
-
-        }
     },
     extraReducers(builder) {
         builder
