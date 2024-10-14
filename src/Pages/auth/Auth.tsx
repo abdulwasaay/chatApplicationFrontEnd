@@ -20,7 +20,7 @@ import { onLoginReducer } from "../../Redux/Slices/AuthSlice"
 const Auth = () => {
     const dispatch: any = useDispatch();
     const navigate = useNavigate();
-    const { isAuth } = useSelector((state: any) => state.loginSlice);
+    const { isAuth } = useSelector((state: any) => state.authSlice);
 
     const signupHandler = (formData: any) => dispatch(onRegister({ formData, onSignupSuccess, onFail }));
     const loginHandler = (formData: any) => dispatch(onLogin({ formData, onRedirection, onLoginSuccess, onFail }));

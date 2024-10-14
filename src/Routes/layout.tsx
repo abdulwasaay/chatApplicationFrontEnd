@@ -17,8 +17,8 @@ const RoutesLayout = () => {
     const { isAuth } = useSelector((state: any) => state.authSlice);
 
     useEffect(() => {
-        const token = GetCookieValue(authCookie);
         
+        const token = GetCookieValue(authCookie);
         if (token) {
             dispatch(setAuth(true))
         } else {
