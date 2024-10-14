@@ -16,6 +16,7 @@ import onOtpSent from "../../Redux/Actions/Middlewares/SentOTP"
 import onVerifyOtp from "../../Redux/Actions/Middlewares/VerifyOtp"
 import onResetPassword from "../../Redux/Actions/Middlewares/ResetPass"
 import { onLoginReducer } from "../../Redux/Slices/AuthSlice"
+import SetCookie from "../../Utils/SetCookie"
 
 const Auth = () => {
     const dispatch: any = useDispatch();
@@ -40,7 +41,13 @@ const Auth = () => {
 
     const onLoginSuccess = (data: any) => {
         toast.success("Login SuccessFull");
-        dispatch(onLoginReducer(data))
+        const userPayload ={
+            id:data?.user_id,
+            name: data?.name,
+            email: data?.email
+        }
+        SetCookie("token",data?.token,30)
+        dispatch(onLoginReducer(userPayload))
     }
 
     const onRedirection = (email: string) => {
