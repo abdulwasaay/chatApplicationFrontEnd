@@ -6,7 +6,7 @@ const Welcome = () => {
     const navigate = useNavigate()
 
     const onStartHandler = () => {
-        navigate("/s")
+        navigate("/chats")
     }
 
     return (

@@ -1,16 +1,21 @@
 import { Route, Routes } from "react-router-dom"
 import Auth from "../Pages/auth/Auth"
 import routeLinks from "./links"
-import NavbarComp from "../Components/NavcarLatest/Navbar"
 import privateRoutes from "./Routes"
 import NotFound from "../Components/Errors/NotFound/Notfound"
 import ProtectedRoutes from "./ProtectedRoutes"
-import getCurrentRoutePath from "../Utils/CurrentPathFinder"
 import { useEffect } from "react"
 import { authCookie } from "../constants/cookieNames"
 import { useDispatch, useSelector } from "react-redux"
 import GetCookieValue from "../Utils/getCookie"
 import { setAuth } from "../Redux/Slices/AuthSlice"
+import HomeIcon from '@mui/icons-material/Home';
+import DeleteCookieValue from "../Utils/DeleteCookie"
+import ChatIcon from '@mui/icons-material/Chat';
+import GroupsIcon from '@mui/icons-material/Groups';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Diversity1Icon from '@mui/icons-material/Diversity1';
+import { persistor } from "../Redux/store"
 
 const RoutesLayout = () => {
     const dispatch = useDispatch();
@@ -23,45 +28,36 @@ const RoutesLayout = () => {
             dispatch(setAuth(true))
         } else {
             dispatch(setAuth(false))
+            persistor.purge()
         }
     }, [])
 
     const logoutHandler = () => {
-        dispatch(setAuth(false))
+        DeleteCookieValue("token")
+        window.location.reload()
     }
-
-    const hideNavPaths = [
-        routeLinks.registerPage,
-        routeLinks.homePage,
-        routeLinks.forgotPage,
-        routeLinks.resetPage,
-        routeLinks.otpPage
-    ]
-
-    const currentRoute: any = getCurrentRoutePath()
-    const isHideNav = () => hideNavPaths.find((route: any) => route.split('/').every((seg: any, i: any) => seg === currentRoute.split('/')[i] || seg.startsWith(':')));
 
 
     const navbarArr = [
-        { name: "Home", link: true, path: routeLinks.homePage },
-        { name: "Chats", link: true, path: routeLinks.chatPage },
-        { name: "Groups", link: true, path: routeLinks.groupsPage },
-        { name: "Signup", link: true, path: routeLinks.registerPage },
-        { name: "Login", link: true, path: routeLinks.registerPage },
-        { name: "Logout", link: false, clickHandler: logoutHandler }
+        { name: "Profile", link: true, path: routeLinks.chatPage , icon: null },
+        { name: "Home", link: true, path: routeLinks.chatPage , icon: <HomeIcon /> },
+        { name: "Chats", link: true, path: routeLinks.chatPage , icon: <ChatIcon /> },
+        { name: "Groups", link: true, path: routeLinks.groupsPage , icon: <GroupsIcon /> },
+        { name: "Friends", link: true, path: routeLinks.groupsPage , icon: <Diversity1Icon /> },
+        { name: "Logout", link: false, clickHandler: logoutHandler , icon: <LogoutIcon /> }
     ]
 
 
     return (
         <>
-            {!isHideNav && <NavbarComp tabs={navbarArr} />}
+            
             <Routes>
                 <Route path="/*" Component={Auth} />
                 {
                     privateRoutes?.map((route: any, ind: any) => (
                         <Route
                             key={ind}
-                            element={<ProtectedRoutes isAuth={isAuth}><route.comp /></ProtectedRoutes>}
+                            element={<ProtectedRoutes isAuth={isAuth} hideNav = {route?.isHideNav} navArr={navbarArr}><route.comp /></ProtectedRoutes>}
                             path={route?.path}
                         />
 
