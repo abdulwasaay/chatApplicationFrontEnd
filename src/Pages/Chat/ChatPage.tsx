@@ -3,7 +3,9 @@
 const ChatPage = () => {
 
     return(
-        <h1>as</h1>
+        <div className=" absolute top-0 left-14 ">
+            <h1>welcome! , In progress</h1>
+        </div>
     )
 }
 export default ChatPage

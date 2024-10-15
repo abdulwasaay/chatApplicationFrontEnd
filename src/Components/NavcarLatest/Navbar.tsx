@@ -12,7 +12,7 @@ const NavbarComp: React.FC<Navbar> = ({ tabs }) => {
     const userFirstLetter:string = user?.name && user?.name?.charAt(0);
 
     return (
-        <div className={`bg-[#3f4396] w-12 h-full relative`}>
+        <div className={`bg-[#3f4396] w-14 h-full relative`}>
             <div className=" text-center h-[60px] pt-5" >
             <Link to={tabs[0]?.path} className=" pl-3 pr-3 pt-[7px] pb-[7px] rounded-full" style={{background : profileColors[userFirstLetter.toUpperCase() && userFirstLetter.toUpperCase() ]}}>{userFirstLetter}</Link>
             </div>
@@ -23,7 +23,7 @@ const NavbarComp: React.FC<Navbar> = ({ tabs }) => {
                             tab?.link ? (
                                 <Link to={tab?.path} >{tab.icon && tab.icon}</Link>
                             ) : (
-                                <button type="button" onClick={tab?.clickHandler} className=" absolute bottom-4 right-2">{tab.icon && tab.icon}</button>
+                                <button type="button" onClick={tab?.clickHandler} className=" absolute bottom-4 right-4">{tab.icon && tab.icon}</button>
                             )
                         }
                     </div>

@@ -3,7 +3,7 @@ import ProfileBar from "./AppBarLatest"
 const AppBarContainer = () => {
 
     return (
-        <div className=" border">
+        <div className=" absolute">
             <ProfileBar
             />
         </div>
