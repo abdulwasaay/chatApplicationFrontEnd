@@ -15,6 +15,7 @@ const MainProfile = ({ open, closeHandler }: { open: boolean, closeHandler: () =
             name: user?.name,
         },
         onSubmit: (values) => {
+            console.log(values)
             // const formData = {
             //     fullName: values?.name,
             //     email: values?.email,
