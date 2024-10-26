@@ -39,18 +39,16 @@ const RoutesLayout = () => {
 
 
     const navbarArr = [
-        { name: "Profile", link: true, path: routeLinks.chatPage , icon: null },
+        { name: "Profile", link: true, icon: null },
         { name: "Home", link: true, path: routeLinks.chatPage , icon: <HomeIcon /> },
         { name: "Chats", link: true, path: routeLinks.chatPage , icon: <ChatIcon /> },
         { name: "Groups", link: true, path: routeLinks.groupsPage , icon: <GroupsIcon /> },
-        { name: "Friends", link: true, path: routeLinks.groupsPage , icon: <Diversity1Icon /> },
+        { name: "Friends", link: true, path: routeLinks.friendsPage , icon: <Diversity1Icon /> },
         { name: "Logout", link: false, clickHandler: logoutHandler , icon: <LogoutIcon /> }
     ]
 
 
     return (
-        <>
-            
             <Routes>
                 <Route path="/*" Component={Auth} />
                 {
@@ -65,7 +63,6 @@ const RoutesLayout = () => {
                 }
                 <Route path="*" Component={NotFound} />
             </Routes>
-        </>
     )
 }
 

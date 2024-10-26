@@ -2,13 +2,13 @@
 //     tabs: any
 // }
 
-const ProfileBar = () => {
+const GroupsBar = () => {
 
     return (
         <div>
-            <h1>sa</h1>
+            <h1>Groups</h1>
         </div>
     )
 }
 
-export default ProfileBar
+export default GroupsBar

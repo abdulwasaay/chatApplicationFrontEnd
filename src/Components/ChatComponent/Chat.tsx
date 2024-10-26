@@ -2,7 +2,7 @@ const ChatComp = () => {
 
     return(
         <div >
-           <p></p>
+           <p>sdads</p>
         </div>
     )
 }

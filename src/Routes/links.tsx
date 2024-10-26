@@ -6,6 +6,7 @@ const routeLinks = {
     registerPage: `${auth}/register`,
     forgotPage: `${auth}/forgot`,
     groupsPage: "/groups",
+    friendsPage: "/friends",
     resetPage: `${auth}/reset-password/:userId/:token`,
     otpPage: `${auth}/otp-verify`,
 }

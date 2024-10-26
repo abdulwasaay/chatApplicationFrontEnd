@@ -1,6 +1,6 @@
 import { forwardRef, memo } from "react"
 
-const TextInputField= forwardRef(({classes="",formik={},name,placeHolder="", required = true ,styles={},types}:any , ref:any)=>{
+const TextInputField= forwardRef(({classes="",formik={},name,placeHolder="", required = true ,styles={},types , disabled =false,}:any , ref:any)=>{
     const formikErrors:any = formik?.errors;
     const formikTouched:any = formik?.touched;
     const errors:any = formikErrors && formikErrors[name];
@@ -20,7 +20,7 @@ const TextInputField= forwardRef(({classes="",formik={},name,placeHolder="", req
             onBlur={formik.handleBlur}
             value={currentValue}
             required={required}
-
+            disabled = {disabled}
             />
            {touched && errors && <p className=" text-md mt-1 text-red-300 font-semibold tracking-wider">{errors}</p>}
         </div>

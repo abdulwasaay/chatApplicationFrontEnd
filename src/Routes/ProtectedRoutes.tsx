@@ -10,10 +10,12 @@ const ProtectedRoutes = ({ children, isAuth, hideNav, navArr }: { children: any,
             return navigate(routeLinks.registerPage)
         }
     }, [isAuth])
-    return <>
+    return <div className=" flex w-full">
         {!hideNav && <NavbarComp tabs={navArr} />}
-        {children}
-    </>
+        <div className=" w-full h-[100vh]">
+            {children}
+        </div>
+    </div>
 }
 
 export default ProtectedRoutes

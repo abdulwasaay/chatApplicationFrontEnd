@@ -1,12 +1,12 @@
 import AppBarContainer from "../../Components/MainAppBar/AppBarContainer"
 
 
-const ChatPage = () => {
+const FriendsPage = () => {
 
     return (
         <div className=" w-full h-full border">
-            <AppBarContainer type="chat"/>
+            <AppBarContainer type="friends"/>
         </div>
     )
 }
-export default ChatPage
+export default FriendsPage
