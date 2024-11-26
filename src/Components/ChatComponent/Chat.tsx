@@ -1,8 +1,14 @@
-const ChatComp = () => {
+import { useContext } from "react"
+import { UserContext } from "../../Context/UserContext"
 
-    return(
-        <div >
-           <p>sdads</p>
+const ChatComp = () => {
+    const { user } = useContext<any>(UserContext);
+
+    return (
+        <div className=" border w-full bg-[#232775]">
+            <div>
+
+            </div>
         </div>
     )
 }

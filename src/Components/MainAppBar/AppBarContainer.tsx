@@ -5,7 +5,7 @@ import GroupsBar from "./GroupsBar"
 const AppBarContainer = ({ type }: { type: any }) => {
 
     return (
-        <div className=" border w-96 max-[500px]:w-full h-full pl-14">
+        <div className="" >
             {
                 type === "chat" ? (
                     <ChatBar

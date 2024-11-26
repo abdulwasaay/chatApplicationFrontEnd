@@ -8,7 +8,7 @@ const TextInputField= forwardRef(({classes="",formik={},name,placeHolder="", req
     const currentValue:any = formik?.values && formik?.values[name];
 
     return (
-        <div>
+        <div className="w-full">
             <input 
             name={name}
             ref={ref}

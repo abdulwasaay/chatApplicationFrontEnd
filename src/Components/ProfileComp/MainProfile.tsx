@@ -37,7 +37,9 @@ const MainProfile = ({ open, closeHandler }: { open: boolean, closeHandler: () =
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <ProfileComp formik={profileFormik}/>
+                <div>
+                    <ProfileComp formik={profileFormik} />
+                </div>
             </Modal>
         </>
     )
