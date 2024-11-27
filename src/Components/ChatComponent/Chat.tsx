@@ -10,7 +10,12 @@ import Button from '@mui/material/Button';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import CloseIcon from '@mui/icons-material/Close';
 import CustomButton from "../customButton/CutomButtomLatest";
-// import ChatMessBar from "./ChatMessageBar";
+import EmailIcon from '@mui/icons-material/Email';
+import FacebookFilled from '@ant-design/icons/FacebookFilled';
+import LinkedinFilled from '@ant-design/icons/LinkedinFilled';
+import TwitterSquareFilled from '@ant-design/icons/TwitterSquareFilled';
+import InstagramFilled from "@ant-design/icons/InstagramFilled";
+import ChatMessBar from "./ChatMessageBar";
 
 const options = [
     "Block"
@@ -54,8 +59,8 @@ const ChatComp = () => {
             };
 
     return (
-        <div className=" w-full bg-[#232775]">
-            <div className=" relative">
+        <div className=" w-full h-[100vh] bg-[#232775]">
+            <div className=" ">
                 <div className="flex items-center justify-between bg-[#3f4396] p-3">
                     <div>
                         <Button sx={{ textTransform: "none" }} onClick={toggleDrawer("right", true)}><div className="flex items-center gap-4 cursor-pointer text-[white]">
@@ -79,6 +84,16 @@ const ChatComp = () => {
                                         <div className="mt-5 flex items-center font-bold gap-3">
                                             <LocalPhoneIcon className="mt-1 text-[#3f4396]" />
                                             <p className="text-white">+92 3002546883</p>
+                                        </div>
+                                        <div className="mt-5 flex items-center font-bold gap-3">
+                                            <EmailIcon className="mt-1 text-[#3f4396]"/>
+                                            <p className="text-white">user@chatly.com</p>
+                                        </div>
+                                        <div className="mt-12 flex justify-between items-center">
+                                            <FacebookFilled className="text-[#3f4396] text-[30px] cursor-pointer"/>
+                                            <LinkedinFilled className="text-[#3f4396] text-[30px] cursor-pointer"/>
+                                            <InstagramFilled className="text-[30px] text-[#3f4396] cursor-pointer"/>
+                                            <TwitterSquareFilled className="text-[#3f4396] text-[30px] cursor-pointer"/>
                                         </div>
                                     </div>
                                 </div>
@@ -127,10 +142,10 @@ const ChatComp = () => {
                         </Menu>
                     </div>
                 </div>
-                <div className=" h-[40rem]">
+                <div className="h-[880px] relative">
                     ds
+                    <ChatMessBar />
                 </div>
-                {/* <ChatMessBar /> */}
             </div>
         </div>
     )
