@@ -1,7 +1,7 @@
 const profileColors:any = {
     A: "#FF0000",  // Red
     B: "#FF7F00",  // Orange
-    C: "#FFFF00",  // Yellow
+    C: "#FF7F00",  // Orange
     D: "#7FFF00",  // Chartreuse
     E: "#00FF00",  // Green
     F: "#00FF7F",  // Spring Green
