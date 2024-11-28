@@ -59,7 +59,7 @@ const ChatComp = () => {
             };
 
     return (
-        <div className=" w-full h-[100vh] bg-[#232775]">
+        <div className=" w-full h-[100vh] bg-[#232775]" style={{marginLeft:"6.4px"}} >
             <div className=" ">
                 <div className="flex items-center justify-between bg-[#3f4396] p-3">
                     <div>

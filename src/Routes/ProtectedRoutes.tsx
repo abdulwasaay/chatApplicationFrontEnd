@@ -12,7 +12,7 @@ const ProtectedRoutes = ({ children, isAuth, hideNav, navArr }: { children: any,
     }, [isAuth])
     return <div className=" flex w-full h-[100vh]">
         {!hideNav && <NavbarComp tabs={navArr} />}
-        <div className=" w-full h-[100vh]" style={{marginLeft:"50px"}}>
+        <div className=" w-full h-[100vh]" >
             {children}
         </div>
     </div>

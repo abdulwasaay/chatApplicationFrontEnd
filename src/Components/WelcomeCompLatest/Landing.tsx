@@ -3,8 +3,8 @@ import LockIcon from '@mui/icons-material/Lock';
 const Landing = () => {
 
     return (
-        
-        <div className="w-full sm:min-w-[600px] md:min-w-[0%] bg-[rgb(35,39,117)] flex flex-col items-center justify-center pl-5 pr-5">
+
+        <div className="w-full sm:min-w-[600px] md:min-w-[0%] bg-[rgb(35,39,117)] flex flex-col items-center justify-center pl-5 pr-5" style={{ marginLeft: "6.4px" }}>
             <div className=" w-full flex justify-center">
                 <div className="w-full flex flex-col items-center">
                     <img src="/assets/appicon.png" alt="appicon" className="w-[200px]" />
