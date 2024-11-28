@@ -7,6 +7,13 @@
   padding: 0;
 }
 
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 #root{
   background-color: #070a52;
   color: white;
