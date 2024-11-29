@@ -8,17 +8,17 @@ import Landing from "../../Components/WelcomeCompLatest/Landing";
 
 const ChatPage = () => {
     const smScreen = window.innerWidth <= 639;
-    const { isHide, user } = useContext<any>(UserContext);
+    const { isHide, user, setIsHide } = useContext<any>(UserContext);
 
     return (
-        <div className=" sm:flex sm:gap-4 sm:overflow-x-auto md:overflow-x-visible" style={{marginLeft:"50px"}}>
+        <div className=" sm:flex sm:gap-4 sm:overflow-x-auto md:overflow-x-visible" style={{ marginLeft: "50px" }}>
             {
                 smScreen ? (
                     <>
                         {!isHide && <AppBarContainer type="chat" />}
                         {
                             user ? (
-                                isHide && <ChatComp />
+                                isHide && <ChatComp setHide={setIsHide} />
                             ) : (
                                 <Landing />
                             )
@@ -29,7 +29,7 @@ const ChatPage = () => {
                         <AppBarContainer type="chat" />
                         {
                             user ? (
-                                <ChatComp />
+                                <ChatComp setHide={setIsHide} />
                             ) : (
                                 <Landing />
                             )

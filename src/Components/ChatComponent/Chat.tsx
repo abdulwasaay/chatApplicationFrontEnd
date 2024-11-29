@@ -15,6 +15,7 @@ import FacebookFilled from '@ant-design/icons/FacebookFilled';
 import LinkedinFilled from '@ant-design/icons/LinkedinFilled';
 import TwitterSquareFilled from '@ant-design/icons/TwitterSquareFilled';
 import InstagramFilled from "@ant-design/icons/InstagramFilled";
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import ChatMessBar from "./ChatMessageBar";
 
 const options = [
@@ -24,7 +25,11 @@ const options = [
 const ITEM_HEIGHT = 20;
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
-const ChatComp = () => {
+interface ChatCompInterface {
+    setHide: (bool: any) => void
+}
+
+const ChatComp: React.FC<ChatCompInterface> = ({ setHide }) => {
 
     const [state, setState] = React.useState({
         top: false,
@@ -34,7 +39,7 @@ const ChatComp = () => {
     });
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
-    const { user } = useContext<any>(UserContext);
+    const { user, setUser } = useContext<any>(UserContext);
     const userFirstLetter: string = user?.name && user?.name?.charAt(0);
     console.log(user)
 
@@ -58,11 +63,17 @@ const ChatComp = () => {
                 setState({ ...state, [anchor]: open });
             };
 
+    const backNavigate = () => {
+        setUser()
+        user && setHide(false)
+    }
+
     return (
-        <div className=" w-full h-[100vh] bg-[#232775]" style={{marginLeft:"6.4px"}} >
+        <div className=" w-full h-[100vh] bg-[#232775]" style={{ marginLeft: "6.4px" }}>
             <div className=" ">
                 <div className="flex items-center justify-between bg-[#3f4396] p-3">
                     <div>
+                        <button onClick={backNavigate}><NavigateBeforeIcon /></button>
                         <Button sx={{ textTransform: "none" }} onClick={toggleDrawer("right", true)}><div className="flex items-center gap-4 cursor-pointer text-[white]">
                             <div className="w-[34px] h-[34px] pl-3 pr-3 pt-[5px] pb-[5px] rounded-full" style={{ background: profileColors[userFirstLetter.toUpperCase() && userFirstLetter.toUpperCase()] }}>
                                 {userFirstLetter.toUpperCase()}
@@ -86,14 +97,14 @@ const ChatComp = () => {
                                             <p className="text-white">+92 3002546883</p>
                                         </div>
                                         <div className="mt-5 flex items-center font-bold gap-3">
-                                            <EmailIcon className="mt-1 text-[#3f4396]"/>
+                                            <EmailIcon className="mt-1 text-[#3f4396]" />
                                             <p className="text-white">user@chatly.com</p>
                                         </div>
                                         <div className="mt-12 flex justify-between items-center">
-                                            <FacebookFilled className="text-[#3f4396] text-[30px] cursor-pointer"/>
-                                            <LinkedinFilled className="text-[#3f4396] text-[30px] cursor-pointer"/>
-                                            <InstagramFilled className="text-[30px] text-[#3f4396] cursor-pointer"/>
-                                            <TwitterSquareFilled className="text-[#3f4396] text-[30px] cursor-pointer"/>
+                                            <FacebookFilled className="text-[#3f4396] text-[30px] cursor-pointer" />
+                                            <LinkedinFilled className="text-[#3f4396] text-[30px] cursor-pointer" />
+                                            <InstagramFilled className="text-[30px] text-[#3f4396] cursor-pointer" />
+                                            <TwitterSquareFilled className="text-[#3f4396] text-[30px] cursor-pointer" />
                                         </div>
                                     </div>
                                 </div>
