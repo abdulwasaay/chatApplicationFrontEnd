@@ -11,7 +11,7 @@ const ChatPage = () => {
     const { isHide, user, setIsHide } = useContext<any>(UserContext);
 
     return (
-        <div className=" sm:flex sm:gap-4 sm:overflow-x-auto md:overflow-x-visible" style={{ marginLeft: "50px" }}>
+        <div className=" sm:flex sm:gap-4 sm:overflow-x-auto md:overflow-x-visible" style={{ marginLeft: "56px" }}>
             {
                 smScreen ? (
                     <>

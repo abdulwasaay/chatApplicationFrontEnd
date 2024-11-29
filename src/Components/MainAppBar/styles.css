@@ -8,6 +8,8 @@ input[type="search"]::-webkit-search-cancel-button {
   width: 4px;
   border-radius: 50px;
   background-color: #070a52;
+  margin-top: 50px;
+  border: 10px solid;
 }
 
 .custom-scrollbar-style::-webkit-scrollbar-thumb{

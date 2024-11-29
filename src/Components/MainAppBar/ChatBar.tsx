@@ -95,44 +95,51 @@ const ChatBar = ({ }) => {
     const filteredArr = chatsArr?.filter((chat: any) => chat?.name?.replace(/\s/g, "").toLowerCase().startsWith(searchName));
 
     return (
-        <div>
+        <div className="h-[100vh]">
             <div className="flex justify-center pl-5 pr-5">
                 <InputField
                     name="chatSearch"
                     types="search"
                     placeHolder="Find Chat"
-                    styles={{ backgroundColor: appColour.lightBLue, }}
+                    styles={{ backgroundColor: appColour.lightBLue }}
                     classes="hide-cancel-button rounded-sm mt-[20px] sm:w-[300px]"
                     formik={searchFormik}
                 />
             </div>
-            <div className="custom-scrollbar-style mt-10 w-full h-[99vh] flex flex-col items-center gap-4 overflow-y-auto pl-5 pr-5">
-                {
-                    filteredArr?.map((chat: any) => {
-                        return (
-                            <div className="bg-[#3f4396] flex w-[100%] sm:w-[300px] items-center gap-4 p-3 rounded-md cursor-pointer" onClick={() => {
-                                setUser(chat)
-                                setIsHide(true)
-                            }}>
-                                <div className="relative">
-                                    <p className=" h-[33px] pl-3 pr-3 pt-1 rounded-full" style={{ background: profileColors[chat?.name.charAt(0).toUpperCase()] }}>{chat?.name.charAt(0).toUpperCase()}</p>
-
-                                    {chat?.isOnline ? (
-                                        <div className="bg-[#25ec99] border border-[#3f4396] w-[11px] h-[11px] absolute top-[-3px] rounded-full shadow-2xl"></div>
-                                    ) : (
-                                        <div className="bg-[#ffffff83] border border-[#3f4396] w-[11px] h-[11px] absolute top-[-3px] rounded-full shadow-2xl"></div>
-                                    )
-                                    }
-                                </div>
-
-                                <div>
-                                    <h1>{chat?.name}</h1>
-                                    <p className=" w-[160px] max-[340px]:w-[120px] whitespace-nowrap overflow-hidden text-ellipsis">{chat?.currentMess}</p>
-                                </div>
+            <div className=" pt-10" style={{ height: '100vh' , paddingBottom:"76px" }}>
+                <div className="custom-scrollbar-style w-full h-full flex flex-col items-center gap-4  overflow-x-hidden pl-5 pr-5">
+                    {filteredArr?.map((chat: any) => (
+                        <div
+                            className="bg-[#3f4396] flex w-full sm:w-[300px] items-center gap-4 p-3 rounded-md cursor-pointer"
+                            onClick={() => {
+                                setUser(chat);
+                                setIsHide(true);
+                            }}
+                        >
+                            <div className="relative">
+                                <p
+                                    className="h-[33px] pl-3 pr-3 pt-1 rounded-full"
+                                    style={{
+                                        background: profileColors[chat?.name.charAt(0).toUpperCase()],
+                                    }}
+                                >
+                                    {chat?.name.charAt(0).toUpperCase()}
+                                </p>
+                                {chat?.isOnline ? (
+                                    <div className="bg-[#25ec99] border border-[#3f4396] w-[11px] h-[11px] absolute top-[-3px] rounded-full shadow-2xl"></div>
+                                ) : (
+                                    <div className="bg-[#ffffff83] border border-[#3f4396] w-[11px] h-[11px] absolute top-[-3px] rounded-full shadow-2xl"></div>
+                                )}
                             </div>
-                        )
-                    })
-                }
+                            <div>
+                                <h1>{chat?.name}</h1>
+                                <p className="w-[160px] max-[340px]:w-[120px] whitespace-nowrap overflow-hidden text-ellipsis">
+                                    {chat?.currentMess}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
