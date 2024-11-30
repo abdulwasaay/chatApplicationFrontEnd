@@ -82,6 +82,25 @@ const ChatBar = ({ }) => {
             currentMess: "Hello, How are you?",
             isOnline: true
         },
+        , {
+            name: "Dummy user15",
+            currentMess: "Hello, How are you?",
+            isOnline: true
+        },
+        , {
+            name: "Dummy user16",
+            currentMess: "Hello, How are you?",
+            isOnline: true
+        },
+        , {
+            name: "Dummy user17",
+            currentMess: "Hello, How are you?",
+            isOnline: true
+        },, {
+            name: "Dummy user18",
+            currentMess: "Hello, How are you?",
+            isOnline: true
+        },
     ];
 
     const searchFormik = useFormik({
@@ -106,7 +125,7 @@ const ChatBar = ({ }) => {
                     formik={searchFormik}
                 />
             </div>
-            <div className=" pt-10" style={{ height: '100vh' , paddingBottom:"76px" }}>
+            <div className=" pt-10 overflow-y-auto" style={{ height: '92vh' , paddingBottom:"20px" }}>
                 <div className="custom-scrollbar-style w-full h-full flex flex-col items-center gap-4  overflow-x-hidden pl-5 pr-5">
                     {filteredArr?.map((chat: any) => (
                         <div
