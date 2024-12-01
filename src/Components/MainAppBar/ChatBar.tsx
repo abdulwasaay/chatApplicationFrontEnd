@@ -13,7 +13,7 @@ import { UserContext } from "../../Context/UserContext"
 
 const ChatBar = ({ }) => {
 
-    const { setUser, setIsHide } = useContext<any>(UserContext);
+    // const { setUser, setIsHide } = useContext<any>(UserContext);
 
     const chatsArr = [
         {
@@ -113,8 +113,8 @@ const ChatBar = ({ }) => {
     const filteredArr = chatsArr?.filter((chat: any) => chat?.name?.replace(/\s/g, "").toLowerCase().startsWith(searchName));
 
     return (
-        <div className="h-[100vh]">
-            <div className="flex justify-center pl-5 pr-5">
+        <div className="h-[100vh] w-16 border">
+            {/* <div className="flex justify-center pl-5 pr-5">
                 <InputField
                     name="chatSearch"
                     types="search"
@@ -124,7 +124,7 @@ const ChatBar = ({ }) => {
                     formik={searchFormik}
                 />
             </div>
-            <div className=" pt-10" style={{ height: '100vh', paddingBottom: "76px" }}>
+            <div className=" pt-10 h-[100%]" >
                 <div className="custom-scrollbar-style w-full h-full flex flex-col items-center gap-4  overflow-x-hidden pl-5 pr-5">
                     {filteredArr?.map((chat: any) => (
                         <div
@@ -158,7 +158,7 @@ const ChatBar = ({ }) => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
