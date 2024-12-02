@@ -125,7 +125,7 @@ const ChatBar = ({ }) => {
                 />
             </div>
             <>
-                <div className="h-[100vh]  fixed  pb-5" style={{ zIndex: "1", paddingTop: "110px" }}>
+                <div className="h-[100vh] w-full absolute bottom-6 pb-5" style={{ zIndex: "1", paddingTop: "110px" }}>
                     <div className="custom-scrollbar-style w-full h-full flex flex-col items-center gap-4 overflow-x-hidden pl-5 pr-5">
                         {filteredArr?.map((chat: any) => (
                             <div
