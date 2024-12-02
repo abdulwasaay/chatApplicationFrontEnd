@@ -2,7 +2,7 @@
 const ChatMessage = ({ isOwnMessage, message }:any) => {
     return (
         <div
-            className={`flex ${isOwnMessage ? "justify-end" : "justify-start"
+            className={`flex mt-4 ${isOwnMessage ? "justify-end" : "justify-start"
                 }`}
         >
             <div
