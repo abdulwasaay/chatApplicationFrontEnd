@@ -19,6 +19,7 @@ body html{
 #root{
   position: fixed;
   inset: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
