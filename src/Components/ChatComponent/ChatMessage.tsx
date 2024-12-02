@@ -7,7 +7,7 @@ const ChatMessage = ({ isOwnMessage, message }:any) => {
         >
             <div
                 className={`${isOwnMessage ? "bg-blue-500 text-white" : "bg-gray-200 text-black"
-                    } px-4 py-2 rounded-lg max-w-xs`}
+                    } px-4 py-2 rounded-lg max-w-xs break-words`}
             >
                 {message}
             </div>
