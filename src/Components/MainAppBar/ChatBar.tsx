@@ -113,7 +113,7 @@ const ChatBar = ({ }) => {
     const filteredArr = chatsArr?.filter((chat: any) => chat?.name?.replace(/\s/g, "").toLowerCase().startsWith(searchName));
 
     return (
-        <div className="h-[100vh] fixed inset-0 w-full sm:w-[360px] flex flex-col items-center ">
+        <div className="h-[100vh] relative w-full sm:w-[360px] flex flex-col items-center ">
             <div className=" absolute w-full text-center pl-3 pr-3 sm:pl-0 sm:pr-0" style={{ zIndex: "3" }}>
                 <InputField
                     name="chatSearch"
@@ -124,7 +124,7 @@ const ChatBar = ({ }) => {
                     formik={searchFormik}
                 />
             </div>
-            <div className="h-[100vh] w-full relative pb-5" style={{ zIndex: "1" , paddingTop:"80px" }}>
+            <div className="h-[100vh] w-full absolute top-0 pb-5" style={{ zIndex: "1" , paddingTop:"80px" }}>
                 <div className="custom-scrollbar-style w-full h-full flex flex-col items-center gap-4 overflow-x-hidden pl-5 pr-5">
                     {filteredArr?.map((chat: any) => (
                         <div
