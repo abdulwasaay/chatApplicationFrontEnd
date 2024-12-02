@@ -94,7 +94,7 @@ const ChatComp: React.FC<ChatCompInterface> = ({ setHide }) => {
         //   {/* Message Input */}
         //   <ChatInput />
         // </div>
-        <div className="flex flex-col h-screen w-full bg-[#232775]" >
+        <div className="flex flex-col h-screen w-full bg-[#232775] relative" >
             <div className="flex items-center justify-between px-4 py-2 text-white shadow bg-[#3f4396] p-3">
                 <div>
                     <button onClick={backNavigate}><NavigateBeforeIcon /></button>
@@ -201,7 +201,7 @@ const ChatComp: React.FC<ChatCompInterface> = ({ setHide }) => {
                 <ChatMessage isOwnMessage={true} message="I'm good, thanks!" />
                 <ChatMessage isOwnMessage={false} message="What about you?" />
             </div>
-            <div className="sticky bottom-0 bg-[#3f4396]">
+            <div className="absolute bottom-0 w-full bg-[#3f4396]">
                 <ChatMessBar />
             </div>
         </div>
