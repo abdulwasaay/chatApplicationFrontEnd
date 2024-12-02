@@ -113,7 +113,7 @@ const ChatBar = ({ }) => {
     const filteredArr = chatsArr?.filter((chat: any) => chat?.name?.replace(/\s/g, "").toLowerCase().startsWith(searchName));
 
     return (
-        <div className="h-[100vh] relative w-full sm:w-[360px] flex flex-col items-center ">
+        <div className="h-[100vh] fixed inset-0 w-full sm:w-[360px] flex flex-col items-center ">
             <div className=" absolute w-full text-center pl-3 pr-3 sm:pl-0 sm:pr-0" style={{ zIndex: "3" }}>
                 <InputField
                     name="chatSearch"
