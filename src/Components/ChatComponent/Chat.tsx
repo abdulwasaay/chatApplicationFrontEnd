@@ -201,7 +201,9 @@ const ChatComp: React.FC<ChatCompInterface> = ({ setHide }) => {
                 <ChatMessage isOwnMessage={true} message="I'm good, thanks!" />
                 <ChatMessage isOwnMessage={false} message="What about you?" />
             </div>
-            <ChatMessBar />
+            <div className="sticky bottom-0 bg-[#3f4396]">
+                <ChatMessBar />
+            </div>
         </div>
     )
 }

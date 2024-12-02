@@ -14,7 +14,8 @@ const ChatMessBar = () => {
     // };
 
     return (
-        <div className="flex items-center px-4 py-2 bg-[#3f4396] shadow">
+
+        <div className="flex items-center px-4 py-2 bg-[#3f4396] shadow ">
             <InputField name="message" types="text" placeHolder="Type a message..." classes="flex-1 px-4 py-2 bg-[#3f4396] border rounded-full outline-none ring-2 ring-blue-500" />
             <button className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600">
                 Send
