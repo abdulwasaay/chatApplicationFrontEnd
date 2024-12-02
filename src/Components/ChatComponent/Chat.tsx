@@ -1,30 +1,30 @@
-import React, { useContext } from "react"
-import { UserContext } from "../../Context/UserContext"
-import profileColors from "../../constants/ProfileColorScheme";
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import CloseIcon from '@mui/icons-material/Close';
-import CustomButton from "../customButton/CutomButtomLatest";
-import EmailIcon from '@mui/icons-material/Email';
-import FacebookFilled from '@ant-design/icons/FacebookFilled';
-import LinkedinFilled from '@ant-design/icons/LinkedinFilled';
-import TwitterSquareFilled from '@ant-design/icons/TwitterSquareFilled';
-import InstagramFilled from "@ant-design/icons/InstagramFilled";
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+// import React, { useContext } from "react"
+// import { UserContext } from "../../Context/UserContext"
+// import profileColors from "../../constants/ProfileColorScheme";
+// import IconButton from '@mui/material/IconButton';
+// import Menu from '@mui/material/Menu';
+// import MenuItem from '@mui/material/MenuItem';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import Drawer from '@mui/material/Drawer';
+// import Button from '@mui/material/Button';
+// import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+// import CloseIcon from '@mui/icons-material/Close';
+// import CustomButton from "../customButton/CutomButtomLatest";
+// import EmailIcon from '@mui/icons-material/Email';
+// import FacebookFilled from '@ant-design/icons/FacebookFilled';
+// import LinkedinFilled from '@ant-design/icons/LinkedinFilled';
+// import TwitterSquareFilled from '@ant-design/icons/TwitterSquareFilled';
+// import InstagramFilled from "@ant-design/icons/InstagramFilled";
+// import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import ChatMessBar from "./ChatMessageBar";
-import ChatMessage from "./ChatMessage";
+// import ChatMessage from "./ChatMessage";
 
-const options = [
-    "Block"
-];
+// const options = [
+//     "Block"
+// ];
 
-const ITEM_HEIGHT = 20;
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
+// const ITEM_HEIGHT = 20;
+// type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 interface ChatCompInterface {
     setHide: (bool: any) => void
@@ -32,42 +32,43 @@ interface ChatCompInterface {
 
 const ChatComp: React.FC<ChatCompInterface> = ({ setHide }) => {
 
-    const [state, setState] = React.useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false,
-    });
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const open = Boolean(anchorEl);
-    const { user, setUser } = useContext<any>(UserContext);
-    const userFirstLetter: string = user?.name && user?.name?.charAt(0);
-    console.log(user)
+    console.log(setHide)
+    // const [state, setState] = React.useState({
+    //     top: false,
+    //     left: false,
+    //     bottom: false,
+    //     right: false,
+    // });
+    // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    // const open = Boolean(anchorEl);
+    // const { user, setUser } = useContext<any>(UserContext);
+    // const userFirstLetter: string = user?.name && user?.name?.charAt(0);
+    // console.log(user)
 
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-    const toggleDrawer =
-        (anchor: Anchor, open: boolean) =>
-            (event: React.KeyboardEvent | React.MouseEvent) => {
-                if (
-                    event.type === 'keydown' &&
-                    ((event as React.KeyboardEvent).key === 'Tab' ||
-                        (event as React.KeyboardEvent).key === 'Shift')
-                ) {
-                    return;
-                }
+    // const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    //     setAnchorEl(event.currentTarget);
+    // };
+    // const handleClose = () => {
+    //     setAnchorEl(null);
+    // };
+    // const toggleDrawer =
+    //     (anchor: Anchor, open: boolean) =>
+    //         (event: React.KeyboardEvent | React.MouseEvent) => {
+    //             if (
+    //                 event.type === 'keydown' &&
+    //                 ((event as React.KeyboardEvent).key === 'Tab' ||
+    //                     (event as React.KeyboardEvent).key === 'Shift')
+    //             ) {
+    //                 return;
+    //             }
 
-                setState({ ...state, [anchor]: open });
-            };
+    //             setState({ ...state, [anchor]: open });
+    //         };
 
-    const backNavigate = () => {
-        setUser()
-        user && setHide(false)
-    }
+    // const backNavigate = () => {
+    //     setUser()
+    //     user && setHide(false)
+    // }
 
     return (
         //     <div className="flex flex-col h-screen bg-gray-100">
@@ -94,8 +95,8 @@ const ChatComp: React.FC<ChatCompInterface> = ({ setHide }) => {
         //   {/* Message Input */}
         //   <ChatInput />
         // </div>
-        <div className="flex flex-col h-screen  w-full bg-[#232775] relative" >
-            <div className="flex items-center justify-between px-4 py-2 text-white shadow bg-[#3f4396] p-3">
+        <div className="flex flex-col h-screen justify-end w-full bg-[#232775] relative border" >
+            {/* <div className="flex items-center justify-between px-4 py-2 text-white shadow bg-[#3f4396] p-3">
                 <div>
                     <button onClick={backNavigate}><NavigateBeforeIcon /></button>
                     <Button sx={{ textTransform: "none" }} onClick={toggleDrawer("right", true)}><div className="flex items-center gap-4 cursor-pointer text-[white]">
@@ -179,7 +180,7 @@ const ChatComp: React.FC<ChatCompInterface> = ({ setHide }) => {
             </div>
             <div className="flex-1 overflow-y-auto p-4">
                 {/* Sample Messages */}
-                <ChatMessage isOwnMessage={false} message="Hello! How are you?" />
+                {/* <ChatMessage isOwnMessage={false} message="Hello! How are you?" />
                 <ChatMessage isOwnMessage={true} message="I'm good, thanks!" />
                 <ChatMessage isOwnMessage={false} message="What about you?" />
                 <ChatMessage isOwnMessage={true} message="I'm good, thanks!" />
@@ -199,11 +200,9 @@ const ChatComp: React.FC<ChatCompInterface> = ({ setHide }) => {
                 <ChatMessage isOwnMessage={true} message="I'm good, thanks!" />
                 <ChatMessage isOwnMessage={false} message="What about you?" />
                 <ChatMessage isOwnMessage={true} message="I'm good, thanks!" />
-                <ChatMessage isOwnMessage={false} message="What about you?" />
-            </div>
-            <div className="sticky bottom-0 w-full bg-[#3f4396]">
+                <ChatMessage isOwnMessage={false} message="What about you?" /> */}
+            {/* </div> */}
                 <ChatMessBar />
-            </div>
         </div>
     )
 }
