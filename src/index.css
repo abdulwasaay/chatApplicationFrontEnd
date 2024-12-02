@@ -18,9 +18,9 @@ body html{
   position: fixed;
   inset: 0;
   bottom: 0;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   /* overflow: hidden; */
   background-color: #070a52;
   color: white;
