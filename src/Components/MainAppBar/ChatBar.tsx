@@ -113,19 +113,19 @@ const ChatBar = ({ }) => {
     const filteredArr = chatsArr?.filter((chat: any) => chat?.name?.replace(/\s/g, "").toLowerCase().startsWith(searchName));
 
     return (
-        <>
-            <div className={` sm:w-[360px] h-full fixed`}>
-                <div className=" absolute w-full text-center pl-3 pr-3 sm:pl-0 sm:pr-0" style={{ zIndex: "3" }}>
-                    <InputField
-                        name="chatSearch"
-                        types="search"
-                        placeHolder="Find Chat"
-                        styles={{ backgroundColor: appColour.lightBLue }}
-                        classes="hide-cancel-button rounded-sm mt-[20px] sm:w-[300px]"
-                        formik={searchFormik}
-                    />
-                </div>
-                <div className="h-[100vh] w-full absolute bottom-1 pb-5" style={{ zIndex: "1", paddingTop: "110px" }}>
+        <div className="h-[100vh] relative w-full sm:w-[360px] flex flex-col items-center ">
+            <div className=" absolute w-full text-center pl-3 pr-3 sm:pl-0 sm:pr-0" style={{ zIndex: "3" }}>
+                <InputField
+                    name="chatSearch"
+                    types="search"
+                    placeHolder="Find Chat"
+                    styles={{ backgroundColor: appColour.lightBLue }}
+                    classes="hide-cancel-button rounded-sm mt-[20px] sm:w-[300px]"
+                    formik={searchFormik}
+                />
+            </div>
+            <>
+                <div className="h-[100vh]  fixed  pb-5" style={{ zIndex: "1", paddingTop: "110px" }}>
                     <div className="custom-scrollbar-style w-full h-full flex flex-col items-center gap-4 overflow-x-hidden pl-5 pr-5">
                         {filteredArr?.map((chat: any) => (
                             <div
@@ -160,8 +160,9 @@ const ChatBar = ({ }) => {
                         ))}
                     </div>
                 </div>
-            </div>
-        </>
+            </>
+
+        </div>
     )
 }
 
