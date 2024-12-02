@@ -113,8 +113,8 @@ const ChatBar = ({ }) => {
     const filteredArr = chatsArr?.filter((chat: any) => chat?.name?.replace(/\s/g, "").toLowerCase().startsWith(searchName));
 
     return (
-        <div className="h-[100vh]">
-            <div className="flex justify-center pl-5 pr-5">
+        <div className="h-[100vh] relative w-full sm:w-[360px] flex flex-col items-center ">
+            <div className=" absolute w-full text-center pl-3 pr-3 sm:pl-0 sm:pr-0" style={{ zIndex: "3" }}>
                 <InputField
                     name="chatSearch"
                     types="search"
@@ -124,11 +124,11 @@ const ChatBar = ({ }) => {
                     formik={searchFormik}
                 />
             </div>
-            <div className=" pt-10" style={{ height: '100vh', paddingBottom: "76px" }}>
-                <div className="custom-scrollbar-style w-full h-full flex flex-col items-center gap-4  overflow-x-hidden pl-5 pr-5">
+            <div className="h-[100vh] w-full absolute bottom-6 pb-5" style={{ zIndex: "1" , paddingTop:"110px" }}>
+                <div className="custom-scrollbar-style w-full h-full flex flex-col items-center gap-4 overflow-x-hidden pl-5 pr-5">
                     {filteredArr?.map((chat: any) => (
                         <div
-                            className="bg-[#3f4396] flex w-full sm:w-[300px] items-center gap-4 p-3 rounded-md cursor-pointer"
+                            className="bg-[#3f4396] flex w-full  sm:w-[300px] items-center gap-4 p-3 rounded-md cursor-pointer"
                             onClick={() => {
                                 setUser(chat);
                                 setIsHide(true);
